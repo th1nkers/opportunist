@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/galgotias-opportunist/static/css/main.c9e00fe0.css",
+    "main.js": "/galgotias-opportunist/static/js/main.6bdf4f2d.js",
+    "index.html": "/galgotias-opportunist/index.html",
+    "main.c9e00fe0.css.map": "/galgotias-opportunist/static/css/main.c9e00fe0.css.map",
+    "main.6bdf4f2d.js.map": "/galgotias-opportunist/static/js/main.6bdf4f2d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9e00fe0.css",
+    "static/js/main.6bdf4f2d.js"
+  ]
+}
