@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/galgotias-opportunist/static/css/main.5eb27585.css",
-    "main.js": "/galgotias-opportunist/static/js/main.1ec03c6d.js",
-    "index.html": "/galgotias-opportunist/index.html",
-    "main.5eb27585.css.map": "/galgotias-opportunist/static/css/main.5eb27585.css.map",
-    "main.1ec03c6d.js.map": "/galgotias-opportunist/static/js/main.1ec03c6d.js.map"
+    "main.css": "/opportunist/static/css/main.5eb27585.css",
+    "main.js": "/opportunist/static/js/main.1ec03c6d.js",
+    "index.html": "/opportunist/index.html",
+    "main.5eb27585.css.map": "/opportunist/static/css/main.5eb27585.css.map",
+    "main.1ec03c6d.js.map": "/opportunist/static/js/main.1ec03c6d.js.map"
   },
   "entrypoints": [
     "static/css/main.5eb27585.css",
