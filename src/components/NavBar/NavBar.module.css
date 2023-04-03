@@ -1,0 +1,19 @@
+.navbar{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    height: 3.8rem;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    border-bottom: 0.2rem solid white;
+}
+
+.brandheading{
+    color: white;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 0 auto;
+}
