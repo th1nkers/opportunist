@@ -1,0 +1,52 @@
+.addForm{
+    margin-top: 9rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    width: 30rem;
+    height: 30rem;
+}
+
+.form>img{
+    width: 100%;
+    height: fit-content;
+    border-radius: 2px;
+}
+
+/* .input{
+    padding: 0 0.5rem;
+    color: rgb(1, 1, 1);
+    width: 100%;
+    font-weight: 630;
+    border-radius: 2px;
+} */
+
+.input{
+    height: 2.4rem;
+    padding: 0 0.5rem;
+    color: rgb(1, 1, 1);
+    width: 100%;
+    font-weight: 630;
+    border-radius: 2px;
+}
+
+.title{
+    height: 2.4rem;
+}
+
+textarea{
+    height: 7rem;
+    width: 100%;
+}
+
+.invalid input{
+    border: 1px solid #a70505;
+    background-color: #edcaca;
+}
+
+.invalid textarea{
+    border: 1px solid #a70505;
+    background-color: #edcaca;
+}

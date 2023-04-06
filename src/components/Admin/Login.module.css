@@ -1,0 +1,45 @@
+.loginBody{
+    display: flex;
+    justify-content: center;
+    margin-top: 16rem; 
+    position: relative;   
+}
+
+.form{
+    width: 30rem;
+}
+
+.input{
+    width: 100%;
+    padding: 0 0.5rem;
+    color: rgb(1, 1, 1);
+    font-weight: 630;
+    height: 2.4rem;
+}
+
+.button{
+    color: rgb(124, 128, 128);
+    font-style: italic;
+    font-size: .9rem;
+    font-weight: 500;
+    float: left;
+    left: 0;
+    padding: 0.6rem 0;
+}
+
+.buttonSubmit{
+    width: 10rem;
+    float: right;
+    right: 0;
+}
+
+.invalid input{
+    border: 1px solid #a70505;
+    background-color: #edcaca;
+}
+
+
+.label{
+    color: rgb(173, 178, 178);
+    font-weight: 630;
+}

@@ -4,11 +4,11 @@ import styles from './EventItem.module.css'
 const EventItem = (props) => {
     return (
         <>
-            <div class={styles.eventCard + " container"} >
+            <div className={styles.eventCard + " container"} >
                 <img src={props.img} alt="..." />
-                    <div class={styles["cardBody"]}>
-                        <h5 class="mt-2">{props.title}</h5>
-                        <p class={styles["card-text"]}>{props.details}</p>
+                    <div className={styles["cardBody"]}>
+                        <h5 className="mt-2">{props.title}</h5>
+                        <p className={styles["card-text"]}>{props.details}</p>
                     </div>
             </div>
         </>

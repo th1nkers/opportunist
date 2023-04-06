@@ -1,19 +1,75 @@
 import React from 'react'
+import styles from './Login.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
+import useInput from '../../hooks/use-input'
 
 const Login = () => {
+
+  const validadminIDValue = value => value.trim() !== '';
+  const validPasswordValue = value => value.trim().length >= 6;
+
+  const {
+    value: adminID,
+    valueChangeHandler: adminIDChangeHandler,
+    inputBlurHandler: adminIDBlurHandler,
+    hasError: adminIDError,
+    isValid: adminIDIsValid
+  } = useInput(validadminIDValue);
+
+  const {
+    value: password,
+    valueChangeHandler: passwordChangeHandler,
+    inputBlurHandler: passwordBlurHandler,
+    hasError: passwordError,
+    isValid: passwordIsValid
+  } = useInput(validPasswordValue);
+
+  const submitHandler = e => {
+    e.preventDefault();
+    if (!adminIDIsValid && !passwordIsValid) return;
+
+  }
+
+
+  const stylesAdminIDInvalid = adminIDError ? `mb-3 ${styles.invalid}` : 'mb-2'
+  const stylesPasswordInvalid = passwordError ? `mb-3 ${styles.invalid}` : 'mb-2'
+
   return (
-    <div className='d-flex justify-content-center mt-5'>
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Admin ID</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    <div className={styles.loginBody}>
+      <form className={styles.form} onSubmit={submitHandler}>
+
+        <div className={stylesAdminIDInvalid}>
+          <input
+            type="text"
+            className={styles.input}
+            id="adminID"
+            value={adminID}
+            onBlur={adminIDBlurHandler}
+            onChange={adminIDChangeHandler}
+            placeholder="Admin ID" />
+          {adminIDError}
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" />
+
+        <div className={stylesPasswordInvalid}>
+          <input
+            type="password"
+            className={styles.input}
+            value={password}
+            id="password"
+            onChange={passwordChangeHandler}
+            onBlur={passwordBlurHandler}
+            placeholder="Password" />
+          {passwordError}
         </div>
-        <button type='button' className='btn' >Contact developer for help.</button>
-        <button type="submit" class="btn btn-dark">Submit</button>
+
+        <button
+          type="submit"
+          className={"btn btn-outline-dark " + styles.buttonSubmit}>
+          <FontAwesomeIcon icon={faLock} />
+          Login
+        </button>
+
       </form>
     </div>
   )
