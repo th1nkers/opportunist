@@ -1,6 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import noimg from '../../assets/noimg.png'
 import EventItem from './EvenItem'
 import styles from './Events.module.css'

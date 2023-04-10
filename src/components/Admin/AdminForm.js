@@ -1,13 +1,9 @@
-import React from 'react'
-import styles from './Admin.module.css'
-import pic from '../../assets/pic.jpg'
-import useInput from '../../hooks/use-input'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faLock } from '@fortawesome/free-solid-svg-icons';
-import { useRef } from 'react';
-
-
-
+import styles from './Admin.module.css';
+import useInput from '../../hooks/use-input';
+import React, { useRef, useState } from 'react';
+import {storage} from '../../helpers/firebase';
+import {getDownloadURL, ref, uploadBytes} from 'firebase/storage';
+import { v4 } from 'uuid';
 
 const AdminForm = (props) => {
 
@@ -15,8 +11,9 @@ const AdminForm = (props) => {
   const detailValue = value => value.trim().length >= 6;
   const titleInputRef = useRef();
   const detailInputRef = useRef();
-  const imgInputRef = useRef(null);
-
+  const [image, setImage] = useState(null);
+  const [imageUpload, setImageUpload] = useState(null);
+  
   const {
     value: title,
     valueChangeHandler: titleChangeHandler,
@@ -33,23 +30,41 @@ const AdminForm = (props) => {
     inputBlurHandler: detailBlurHandler
   } = useInput(detailValue);
 
-  const handleImageChange = e =>{
-    const image = e.target.files[0];
-    imgInputRef.current = image;
+  
+  const handleImageChange = async e =>{
+    const selectedImg = e.target.files[0];
+    const selectedImgPath = URL.createObjectURL(selectedImg);
+    setImage(selectedImgPath );
+    setImageUpload(selectedImg);
+    // const storage = getStorage(app);
+    // const imageRef = ref(storage, selectedImg.name);
+    // const snapshot = await uploadBytes(imageRef, selectedImg);
+    // downloadURL = await snapshot.ref.getDownloadURL();
+
+    // console.log(downloadURL)
   }
 
-  const submitHandler = e => {
+  const submitHandler = async e => {
     e.preventDefault();
     if (!titleIsValid && !detailIsValid) return;
 
     const enterTitleValue = titleInputRef.current.value;
     const enterDetailValue = detailInputRef.current.value;
-    const enterImageValue = imgInputRef.current.value;
 
-    console.log(enterImageValue)
-    props.onEnterInfo(enterTitleValue, enterDetailValue)
+
+    if(imageUpload === null)return;
+    const imageRef = ref(storage,`${imageUpload.name + v4()}`);
+    // uploadBytes(imageRef,imageUpload).then(()=>{
+    //   alert("Image Uploaded")
+    // })
+
+    const snapshot = await uploadBytes(imageRef,imageUpload);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    // console.log(downloadURL);
+    
+    props.onEnterInfo(enterTitleValue,enterDetailValue,downloadURL)
+    
   }
-
 
   const stylesTextInvalid = titleError ? `mb-1 mt-1 ${styles.invalid}` : 'mb-1 mt-1'
   const stylesDetailInvalid = detailError ? `${styles.invalid}` : ''
@@ -58,10 +73,9 @@ const AdminForm = (props) => {
     <>
       <div className={styles.addForm}>
         <form className={styles.form} onSubmit={submitHandler}>
-
           <img
-            src={pic}
-            alt="img for info"
+            src={image}
+            alt="uploaded img"
             className='mb-1' />
           <input type="file" accept='image/*' onChange={handleImageChange} />
 
