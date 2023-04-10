@@ -9,7 +9,7 @@ import AdminList from './components/Admin/AdminList';
 
 const router = createBrowserRouter([
   {
-    path: 'https://thinkers121.github.io/opportunist/',
+    path: '/',
     element: <Root/>,
     errorElement: <Error/>,
     children:[

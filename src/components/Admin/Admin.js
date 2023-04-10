@@ -1,7 +1,7 @@
 import React from 'react';
 import useHttp from '../../hooks/use-http';
 import AdminForm from './AdminForm';
-
+import {REACT_APP_BACKEND_URL} from '../../helpers/firebaseConfig'
 
 const Admin = () => {
 
@@ -18,14 +18,13 @@ const Admin = () => {
         };
         
         sendReq({
-          url: "https://opportunist-io-default-rtdb.firebaseio.com/events.json",
+          url: REACT_APP_BACKEND_URL,
           method: 'POST',
           body: JSON.stringify(reqBody),
           headers:{
             'Content-type': 'application/json',
           }
         })
-
       }
 
   return (

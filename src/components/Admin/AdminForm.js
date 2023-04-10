@@ -1,7 +1,7 @@
 import styles from './Admin.module.css';
 import useInput from '../../hooks/use-input';
 import React, { useRef, useState } from 'react';
-import {storage} from '../../helpers/firebase';
+import {storage} from '../../helpers/firebaseConfig';
 import {getDownloadURL, ref, uploadBytes} from 'firebase/storage';
 import { v4 } from 'uuid';
 
@@ -36,14 +36,7 @@ const AdminForm = (props) => {
     const selectedImgPath = URL.createObjectURL(selectedImg);
     setImage(selectedImgPath );
     setImageUpload(selectedImg);
-    // const storage = getStorage(app);
-    // const imageRef = ref(storage, selectedImg.name);
-    // const snapshot = await uploadBytes(imageRef, selectedImg);
-    // downloadURL = await snapshot.ref.getDownloadURL();
-
-    // console.log(downloadURL)
   }
-
   const submitHandler = async e => {
     e.preventDefault();
     if (!titleIsValid && !detailIsValid) return;
@@ -54,13 +47,9 @@ const AdminForm = (props) => {
 
     if(imageUpload === null)return;
     const imageRef = ref(storage,`${imageUpload.name + v4()}`);
-    // uploadBytes(imageRef,imageUpload).then(()=>{
-    //   alert("Image Uploaded")
-    // })
 
     const snapshot = await uploadBytes(imageRef,imageUpload);
     const downloadURL = await getDownloadURL(snapshot.ref);
-    // console.log(downloadURL);
     
     props.onEnterInfo(enterTitleValue,enterDetailValue,downloadURL)
     

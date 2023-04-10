@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/opportunist/static/css/main.944fb10d.css",
+    "main.js": "/opportunist/static/js/main.d80bf33e.js",
+    "index.html": "/opportunist/index.html",
+    "main.944fb10d.css.map": "/opportunist/static/css/main.944fb10d.css.map",
+    "main.d80bf33e.js.map": "/opportunist/static/js/main.d80bf33e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.944fb10d.css",
+    "static/js/main.d80bf33e.js"
+  ]
+}
