@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/opportunist/static/css/main.5eb27585.css",
-    "main.js": "/opportunist/static/js/main.1ec03c6d.js",
+    "main.css": "/opportunist/static/css/main.944fb10d.css",
+    "main.js": "/opportunist/static/js/main.37547bba.js",
     "index.html": "/opportunist/index.html",
-    "main.5eb27585.css.map": "/opportunist/static/css/main.5eb27585.css.map",
-    "main.1ec03c6d.js.map": "/opportunist/static/js/main.1ec03c6d.js.map"
+    "main.944fb10d.css.map": "/opportunist/static/css/main.944fb10d.css.map",
+    "main.37547bba.js.map": "/opportunist/static/js/main.37547bba.js.map"
   },
   "entrypoints": [
-    "static/css/main.5eb27585.css",
-    "static/js/main.1ec03c6d.js"
+    "static/css/main.944fb10d.css",
+    "static/js/main.37547bba.js"
   ]
 }
