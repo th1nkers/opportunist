@@ -1,22 +1,21 @@
-import { Route } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Route, useNavigate } from 'react-router-dom';
 import { auth } from '../helpers/firebaseConfig';
-import { useNavigate } from 'react-router-dom';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  const { user } = auth();
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
-  if (!user) {
-    navigate('/login');
-    return null;
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
   return (
     <Route
       {...rest}
-      render={(props) => (
-        <Component {...props} />
-      )}
+      render={(props) =>
+        user ? <Component {...props} /> : navigate("login")
+      }
     />
   );
 };

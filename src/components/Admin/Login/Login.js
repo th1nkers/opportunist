@@ -6,7 +6,7 @@ import { signInWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import {auth} from '../../../helpers/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
-const Signup = () => {
+const Login = () => {
   const navigate = useNavigate();
 
   const validadminIDValue = value => value.trim() !== '';
@@ -102,4 +102,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default Login
