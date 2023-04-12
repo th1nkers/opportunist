@@ -6,6 +6,8 @@ import Error from './pages/Error';
 import Login from './components/Admin/Login/Login';
 import Admin from './components/Admin/Admin';
 
+const basename = process.env.PUBLIC_URL;
+
 const router = createBrowserRouter([
   {
     path: '/opportunist',
@@ -17,7 +19,7 @@ const router = createBrowserRouter([
       {path: 'admin', element: <Admin/>},
     ]
   }
-])
+],{basename});
 
 function App() {
   return <RouterProvider router={router}/>
