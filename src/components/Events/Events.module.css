@@ -1,5 +1,11 @@
 .events{
-    margin-top: 2rem;    
+    margin-top: 3.8rem;
+     
+}
+
+.main{
+    display: flex;
+    justify-content: center; 
 }
 
 .loader{

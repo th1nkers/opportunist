@@ -1,36 +1,33 @@
 .loginBody{
     display: flex;
     justify-content: center;
-    margin-top: 16rem; 
-    position: relative;   
+    align-items: center;
+    height: 100vh;  
 }
 
 .form{
-    width: 30rem;
+    width: 35vw;
 }
 
 .input{
     width: 100%;
     padding: 0 0.5rem;
     color: rgb(1, 1, 1);
-    font-weight: 630;
-    height: 2.4rem;
+    font-weight: 450;
+    height: 6.5vh;
 }
 
-.button{
+button{
     color: rgb(124, 128, 128);
-    font-style: italic;
-    font-size: .9rem;
-    font-weight: 500;
-    float: left;
-    left: 0;
-    padding: 0.6rem 0;
+    font-style: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0 0;
+    width: 100%;
 }
 
-.buttonSubmit{
-    width: 10rem;
-    float: right;
-    right: 0;
+.buttonSubmit :disabled{
+    color: gray !important;
 }
 
 .invalid input{
@@ -38,8 +35,8 @@
     background-color: #edcaca;
 }
 
-
-.label{
-    color: rgb(173, 178, 178);
-    font-weight: 630;
-}
+@media (max-width: 666px) {
+    .form{
+        width: 80%;
+    }
+  }

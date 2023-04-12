@@ -1,4 +1,4 @@
-import styles from './Admin.module.css';
+import styles from './AdminForm.module.css';
 import useInput from '../../hooks/use-input';
 import React, { useRef, useState } from 'react';
 import {storage} from '../../helpers/firebaseConfig';
@@ -76,7 +76,7 @@ const AdminForm = (props) => {
               onBlur={titleBlurHandler}
               value={title}
               onChange={titleChangeHandler}
-              placeholder="headline"
+              placeholder="Headline"
               ref={titleInputRef} />
             {titleError}
           </div>
@@ -88,7 +88,7 @@ const AdminForm = (props) => {
               onBlur={detailBlurHandler}
               value={detail}
               onChange={detailChangeHandler}
-              placeholder="description"
+              placeholder="Description"
               ref={detailInputRef}
               >
             </textarea>

@@ -74,9 +74,11 @@ const Events = () => {
     }
 
     return (
-        <section>
+        <div className={styles.main}>
+        <section className={styles.events}>
             {sampleEventMap}
         </section>
+        </div>
     )
 }
 

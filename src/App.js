@@ -4,21 +4,23 @@ import Root from './pages/Root';
 import Events from './components/Events/Events';
 import Error from './pages/Error';
 import Login from './components/Admin/Login/Login';
-import Admin from './components/Admin/Admin'
-import AdminList from './components/Admin/AdminList';
-import Signup from './components/Admin/Signup/Signup';
+import Admin from './components/Admin/Admin';
+// import AdminList from './components/Admin/AdminList';
+// import { auth } from './helpers/firebaseConfig';
+// import PrivateRoute from './pages/PrivateRoute';
+// import Signup from './components/Admin/Signup/Signup';
 
 const router = createBrowserRouter([
   {
-    path: 'opportunist/',
+    path: '/',
     element: <Root/>,
     errorElement: <Error/>,
     children:[
       {index: true, element: <Events/> },
       {path: 'login', element: <Login/>},
-      {path: 'signup', element: <Signup/>},
+      // {path: 'signup', element: <Signup/>},
       {path: 'admin', element: <Admin/>},
-      {path:'admin/list', element: <AdminList/>}
+      // {path:'admin/list', element: <AdminList/>}
     ]
   }
 ])

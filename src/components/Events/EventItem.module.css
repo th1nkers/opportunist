@@ -1,30 +1,26 @@
 .eventCard{
-        width: 800px;
-        max-height: 1000px;
+        width: 50vw;
         background-color: white;
-        border-bottom: .38rem solid rgb(244, 244, 244);
-        /* border-right: .2rem solid rgb(207, 201, 201); */
-        /* border-left: .2rem solid rgb(207, 201, 201); */
+        border-bottom: .38rem solid rgb(236, 230, 230);
         border-radius: .2rem;
 }
 
 .eventCard>img{
     width: 100%;
-    height: 100%;
     object-fit: cover;
     object-position: center;
-    padding: 1rem .8rem 0 .8rem;
+    padding: .7rem .8rem 0rem .8rem;
     border-top-left-radius: 1.6rem;
     border-top-right-radius: 1.6rem;
 }
 
 .cardBody{
-    padding: 0 1rem 0 1rem;
+    padding: 0 .8rem;
 }
 
 .cardBody>h5{
-    font-weight: 650;
-    font-size: 2.1rem ;
+    font-weight: 600;
+    font-size: 1.9rem ;
     font-family: 'PT Serif', serif;
     background-color: aliceblue;
     border-radius: 3px;
@@ -34,8 +30,14 @@
 .card-text{
    font-family: 'Nunito', sans-serif;
    font-style: italic;
-   font-size: 1.3rem;
-   color: rgb(46, 48, 50);
-   font-weight: 300 ;
-   padding: .4rem .6rem;
+   font-size: 1.2rem;
+   color: rgb(0, 0, 0);
+   font-weight: 200 ;
+   padding: 0.1rem .6rem;
 }
+
+ @media (max-width: 1199px) {
+    .eventCard{
+        width: 100vw;
+    }
+  }
